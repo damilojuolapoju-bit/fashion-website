@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Lumière Couture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Marquee Section -->
+        <div id="marquee-container" class="marquee-section">
+            <div class="marquee">
+                <span id="marquee-text">✨ New Collection 2026 Available Now | Book Your Appointment Today | Next Event: Spring Fashion Show - March 20, 2026 ✨</span>
+            </div>
+        </div>
+
+        <!-- Navigation Header -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1>Lumière Couture</h1>
+                    <p class="tagline">Elegance Redefined</p>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="products.html" class="nav-link active">Products</a></li>
+                        <li><a href="board.html" class="nav-link">Board</a></li>
+                        <li><a href="events.html" class="nav-link">Events</a></li>
+                        <li><a href="inquiries.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="products-section">
+                <div class="container">
+                    <h2>Our Collections</h2>
+                    <p class="section-subtitle">Explore our curated selection of exclusive designs</p>
+
+                    <!-- Filter Buttons -->
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                        <button class="filter-btn" onclick="filterProducts('dresses')">Dresses</button>
+                        <button class="filter-btn" onclick="filterProducts('suits')">Suits</button>
+                        <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid">
+                        <div class="product-item" data-category="dresses">
+                            <div class="product-image">👗</div>
+                            <h3>Midnight Elegance Gown</h3>
+                            <p class="product-description">A stunning black evening gown with intricate beadwork</p>
+                            <p class="price">$3,200</p>
+                            <button class="add-to-cart" onclick="addToCart('Midnight Elegance Gown')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="dresses">
+                            <div class="product-image">👗</div>
+                            <h3>Blush Romance Dress</h3>
+                            <p class="product-description">Romantic blush pink silk dress with flowing silhouette</p>
+                            <p class="price">$2,800</p>
+                            <button class="add-to-cart" onclick="addToCart('Blush Romance Dress')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="dresses">
+                            <div class="product-image">👗</div>
+                            <h3>Golden Horizon Dress</h3>
+                            <p class="product-description">Luxurious gold sequined cocktail dress</p>
+                            <p class="price">$2,400</p>
+                            <button class="add-to-cart" onclick="addToCart('Golden Horizon Dress')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="suits">
+                            <div class="product-image">👔</div>
+                            <h3>Executive Black Suit</h3>
+                            <p class="product-description">Premium tailored black suit for the modern professional</p>
+                            <p class="price">$2,100</p>
+                            <button class="add-to-cart" onclick="addToCart('Executive Black Suit')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="suits">
+                            <div class="product-image">👔</div>
+                            <h3>Navy Power Suit</h3>
+                            <p class="product-description">Bold navy suit with custom tailoring</p>
+                            <p class="price">$1,950</p>
+                            <button class="add-to-cart" onclick="addToCart('Navy Power Suit')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="suits">
+                            <div class="product-image">👔</div>
+                            <h3>Charcoal Sophistication Suit</h3>
+                            <p class="product-description">Elegant charcoal gray suit with silk lining</p>
+                            <p class="price">$2,050</p>
+                            <button class="add-to-cart" onclick="addToCart('Charcoal Sophistication Suit')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="accessories">
+                            <div class="product-image">👠</div>
+                            <h3>Crystal Embellished Heels</h3>
+                            <p class="product-description">Stunning heels with Swarovski crystals</p>
+                            <p class="price">$1,200</p>
+                            <button class="add-to-cart" onclick="addToCart('Crystal Embellished Heels')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="accessories">
+                            <div class="product-image">👜</div>
+                            <h3>Leather Handbag</h3>
+                            <p class="product-description">Premium Italian leather handbag</p>
+                            <p class="price">$1,800</p>
+                            <button class="add-to-cart" onclick="addToCart('Leather Handbag')">Add to Cart</button>
+                        </div>
+
+                        <div class="product-item" data-category="accessories">
+                            <div class="product-image">⌚</div>
+                            <h3>Gold Signature Watch</h3>
+                            <p class="product-description">Elegant timepiece with gold plating</p>
+                            <p class="price">$2,200</p>
+                            <button class="add-to-cart" onclick="addToCart('Gold Signature Watch')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Summary -->
+            <section class="cart-section">
+                <div class="container">
+                    <h2>Shopping Cart</h2>
+                    <div id="cart-items"></div>
+                    <div id="cart-total" class="cart-total"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Lumière Couture</h4>
+                        <p>Redefining fashion with passion and precision</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="board.html">Board</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>Email: info@lumierecouture.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Lumière Couture. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
